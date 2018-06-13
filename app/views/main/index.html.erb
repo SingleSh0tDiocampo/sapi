@@ -1,0 +1,24 @@
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+<%=
+    shop = ShopifyAPI::Shop.current
+
+    # Get a specific product
+    # product = ShopifyAPI::Product.find(704012877875)
+    
+    # Create a new product
+    new_product = ShopifyAPI::Product.new
+    new_product.title = "My Favorite Product"
+    new_product.product_type = "Snowboard"
+    new_product.vendor = "Burton"
+    new_product.save
+    
+    # Update a product
+    #product.handle = "burton-snowboard"
+    #product.save
+   %> 
+<p>This is the product: <%= new_product.title %></p>
+<p>This is the product: <%= new_product.id %></p>
+<p>This is the product: <%= shop.name %></p>
+
+
